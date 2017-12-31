@@ -1,0 +1,22 @@
+﻿@model formbasic.Models.custommodel
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Customers</h2>
+<div class="container ">
+
+    @using (Html.BeginForm("Record", "Home", FormMethod.Post))
+    {
+
+        @Html.DropDownListFor(model => model.Id, ViewBag.employ as SelectList, "--select employee--", new { @class = "form-control" })
+        @Html.TextBoxFor(model => model.name, new { @class = "form-control" })
+        @Html.TextBoxFor(model => model.post, new { @class = "form-control" })
+
+
+        <input type="submit" value="submit" class="btn btn-block alert-success" />
+    }
+
+</div>
+
